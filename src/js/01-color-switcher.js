@@ -10,9 +10,9 @@ function changeColor() {
   document.body.style.backgroundColor = getRandomHexColor();
   startBtn.setAttribute('disabled', '');
   stopBtn.removeAttribute('disabled', '');
+  timerId = setInterval(changeColor, NOTIFICATION_DELAY);
 }
 // if (!startBtn.matches('[disabled]'))
-timerId = setInterval(changeColor, NOTIFICATION_DELAY);
 
 function stopChangeColor() {
   clearInterval(timerId);
