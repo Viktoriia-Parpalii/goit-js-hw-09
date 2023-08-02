@@ -27,7 +27,7 @@ const options = {
     }
   },
 };
-const flatpickr = flatpickr(myInput, options);
+flatpickr(myInput, options);
 
 startBtn.disabled = true;
 
