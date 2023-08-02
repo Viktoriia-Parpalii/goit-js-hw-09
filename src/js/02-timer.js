@@ -10,6 +10,7 @@ const refs = {
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
 };
+const INETRVAL_DELAY = 1000;
 
 const options = {
   enableTime: true,
@@ -44,7 +45,7 @@ function toStartTimer() {
     refs.hours.textContent = timeComponents.hours;
     refs.minutes.textContent = timeComponents.minutes;
     refs.seconds.textContent = timeComponents.seconds;
-  }, 1000);
+  }, INETRVAL_DELAY);
 }
 
 function addLeadingZero(value) {
