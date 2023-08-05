@@ -11,6 +11,7 @@ const refs = {
   seconds: document.querySelector('[data-seconds]'),
 };
 const INETRVAL_DELAY = 1000;
+let timerId = null;
 
 const options = {
   enableTime: true,
@@ -32,18 +33,22 @@ startBtn.disabled = true;
 
 startBtn.addEventListener('click', toStartTimer);
 function toStartTimer() {
-  setInterval(() => {
+  timerId = setInterval(() => {
     startBtn.disabled = true;
     myInput.disabled = true;
     const currentTime = new Date();
     const deadlineTime = new Date(myInput.value);
     const deltaTime = deadlineTime - currentTime;
-    const timeComponents = convertMs(deltaTime);
+    if (deltaTime > 0) {
+      const timeComponents = convertMs(deltaTime);
 
-    refs.days.textContent = timeComponents.days;
-    refs.hours.textContent = timeComponents.hours;
-    refs.minutes.textContent = timeComponents.minutes;
-    refs.seconds.textContent = timeComponents.seconds;
+      refs.days.textContent = timeComponents.days;
+      refs.hours.textContent = timeComponents.hours;
+      refs.minutes.textContent = timeComponents.minutes;
+      refs.seconds.textContent = timeComponents.seconds;
+    } else {
+      clearInterval(timerId);
+    }
   }, INETRVAL_DELAY);
 }
 
