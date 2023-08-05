@@ -16,3 +16,30 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.field {
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: plum;
+  box-shadow: 0px 7px 29px 0px #000000;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+.marker {
+  font-size: 25px;
+  font-weight: bold;
+}
